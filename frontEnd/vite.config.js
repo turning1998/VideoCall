@@ -108,7 +108,7 @@ export default ({ mode }) =>
       host: true,
       proxy: {
         '/test': {
-          target: 'https://zyhcool.top:8080', // 后端接口地址 http://192.168.49.142:8087 https://yfgis.yndk.cn:1000
+          target: 'https://zyhcool.top:8080', 
           ws: true,
           changeOrigin: true, // 是否允许跨越
           rewrite: path => path.replace(/^\/test/, '/'),
@@ -122,12 +122,6 @@ export default ({ mode }) =>
           target: 'http://localhost:3000',
           changeOrigin: true,
           rewrite: path => path.replace(/^\/mock/, '/mock'),
-        },
-        '/yfgis': {
-          target: 'https://yfgis.yndk.cn:1000', // 后端接口地址
-          ws: true,
-          changeOrigin: true, // 是否允许跨越
-          rewrite: path => path.replace(/^\/yfgis/, '/'),
         },
         '/weather': {
           target: 'http://13.11.100.91', // 后端接口地址
