@@ -1,0 +1,33 @@
+@import 'vxe-table/styles/variable.scss';
+
+// 修改样式变量
+@import './_vars.scss';
+// font
+$vxe-font-color: $--color-dark;
+
+// color
+$vxe-primary-color: $--color-primary;
+
+// table
+$vxe-table-font-color: $vxe-font-color;
+$vxe-table-border-color: $--bg-grey;
+$vxe-table-row-hover-background-color: rgba($--color-primary, 0.1);
+$vxe-table-header-font-color: $--color-grey-sub;
+$vxe-table-header-font-weight: 400;
+
+@import 'vxe-table/styles/table.scss';
+// @import 'vxe-table/styles/column.scss';
+@import 'vxe-table/styles/header.scss';
+// @import 'vxe-table/styles/grid.scss';
+
+.vxe-grid.is--loading:before {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.vxe-grid-list {
+  .vxe-table--render-default .vxe-header--column:not(.col--ellipsis),
+  .vxe-table--render-default .vxe-body--column:not(.col--ellipsis),
+  .vxe-table--render-default .vxe-footer--column:not(.col--ellipsis) {
+    padding: 6px 0;
+  }
+}

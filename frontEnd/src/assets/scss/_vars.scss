@@ -1,0 +1,39 @@
+// 全局scss总名称,区分其他组件class
+$--custom-name: 'rd' !default;
+
+// 主体色
+$--color-dark: #060606 !default;
+$--color-grey: #666666 !default;
+$--color-grey-sub: #909399 !default;
+$--color-primary: #3967FF !default;
+$--color-primary-sub: #64C5C0 !default;
+$--color-primary-active: #499DA8 !default;
+$--color-primary-disabled: #DAF7EA !default;
+
+$--color-success: #3967FF !default;
+$--color-danger: #F56C6C !default;
+$--color-warning: #E6A23C !default;
+
+// 背景色
+$--bg-grey: #f0f0f0 !default;
+$--bg-grey-sub: #F5F7FA !default;
+$--bg-primary: rgba($--color-primary, 0.1);
+
+// 字体色
+$--text-1: #303133 !default;
+$--text-2: #606266 !default;
+$--text-3: #909399 !default;
+$--text-4: #C0C4CC !default;
+
+// 线条色
+$--line-1: #DCDFE6 !default;
+$--line-2: #E4E7ED !default;
+$--line-3: #EBEEF5 !default;
+$--line-4: #F2F6FC !default;
+
+// 渐变色
+$--gradient-primary: linear-gradient(90deg, $--color-primary, $--color-primary-sub);
+
+// 阴影
+$--shadow-bg-1: 0px 10px 16px rgba(0, 0, 0, 0.08);
+$--shadow-bg-2: 0px -2px 15px rgba(120, 121, 121, 0.06);

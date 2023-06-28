@@ -1,0 +1,225 @@
+@import './_vars';
+@import './mixins';
+
+/*
+  颜色
+*/
+.#{$--custom-name} {
+  // 主体颜色
+  &-color {
+    @each $theme, $value in (-white: white, -primary: $--color-primary, -danger: $--color-danger, -dark: $--color-dark) {
+      &#{$theme} {
+        color: $value;
+      }
+    }
+  }
+  // 背景颜色
+  &-bg {
+    @each $theme, $value in (-white: white, -grey: $--bg-grey, -greysub: $--bg-grey-sub) {
+      &#{$theme} {
+        background-color: $value;
+      }
+    }
+  }
+  // 字体颜色
+  &-text {
+    @each $theme, $value in (-deep1: $--text-1, -deep2: $--text-2, -deep3: $--text-3, -deep4: $--text-4) {
+      &#{$theme} {
+        color: $value;
+      }
+    }
+  }
+}
+
+/*
+  字体
+*/
+.#{$--custom-name} {
+  &-font {
+    // 字体大小
+    @for $idx from 5 through 20 {
+      &-#{$idx * 2} {
+        font-size: #{$idx * 2}px;
+      }
+    }
+    // 字体比重
+    @for $idx from 2 through 8 {
+      &-#{$idx * 100} {
+        font-weight: $idx * 100;
+      }
+    }
+    // 位置
+    @each $pos in center, right {
+      &-#{$pos} {
+        text-align: $pos;
+      }
+    }
+  }
+}
+
+// 相对宽高
+.#{$--custom-name} {
+  &-w {
+    &-100 {
+      width: 100%;
+    }
+  }
+  &-h {
+    &-100 {
+      height: 100%;
+    }
+  }
+}
+
+// 间隔与间距
+.#{$--custom-name} {
+  @for $idx from 0 through 16 {
+    &-p {
+      &-#{$idx * 4} {
+        padding: #{$idx * 4}px;
+      }
+      &x-#{$idx * 4} {
+        padding-left: #{$idx * 4}px;
+        padding-right: #{$idx * 4}px;
+      }
+      &y-#{$idx * 4} {
+        padding-top: #{$idx * 4}px;
+        padding-bottom: #{$idx * 4}px;
+      }
+      &t-#{$idx * 4} {
+        padding-top: #{$idx * 4}px;
+      }
+      &b-#{$idx * 4} {
+        padding-bottom: #{$idx * 4}px;
+      }
+      &l-#{$idx * 4} {
+        padding-left: #{$idx * 4}px;
+      }
+      &r-#{$idx * 4} {
+        padding-right: #{$idx * 4}px;
+      }
+    }
+    &-m {
+      &-#{$idx * 4} {
+        margin: #{$idx * 4}px;
+      }
+      &x-#{$idx * 4} {
+        margin-left: #{$idx * 4}px;
+        margin-right: #{$idx * 4}px;
+      }
+      &y-#{$idx * 4} {
+        margin-top: #{$idx * 4}px;
+        margin-bottom: #{$idx * 4}px;
+      }
+      &t-#{$idx * 4} {
+        margin-top: #{$idx * 4}px;
+      }
+      &b-#{$idx * 4} {
+        margin-bottom: #{$idx * 4}px;
+      }
+      &l-#{$idx * 4} {
+        margin-left: #{$idx * 4}px;
+      }
+      &r-#{$idx * 4} {
+        margin-right: #{$idx * 4}px;
+      }
+    }
+  }
+}
+
+// flex布局
+.#{$--custom-name} {
+  &-flex {
+    &-wrap {
+      flex-wrap: wrap;
+    }
+    @each $idx in 1, auto {
+      &-#{$idx} {
+        flex: $idx;
+      }
+    }
+  }
+}
+
+// 垂直全占位布局
+.#{$--custom-name} {
+  &-box {
+    @include flex-box(_, center);
+    &-center { // 全居中
+      @include flex-box(center, center);
+      &-col {
+        @include flex-box(center, center, column);
+      }
+    }
+    &-right { // x轴居右，y轴居中
+      @include flex-box(right, center)
+    }
+    &-between {
+      @include flex-box(space-between, center);
+    }
+    &-full {
+      @include flex-box(_, stretch);
+      @extend .#{$--custom-name}-w-100;
+      &-col {
+        @include flex-box(_, stretch, column);
+        @extend .#{$--custom-name}-h-100;
+      }
+    }
+    // 子选项需滑动时
+    &-auto {
+      @extend .#{$--custom-name}-flex-auto;
+      @extend .#{$--custom-name}-area-none;
+    }
+  }
+  &-no-shrink {
+    flex-shrink: 0;
+  }
+}
+
+// 边框域
+.#{$--custom-name} {
+  &-area {
+    &-none {
+      @include area(hidden, hidden);
+    }
+    &-x {
+      @include area(scroll, hidden);
+    }
+    &-y {
+      @include area(hidden, scroll);
+    }
+  }
+}
+
+// 内容
+.#{$--custom-name} {
+  &-content {
+    // @extend .rd-h-100;
+    // @extend .rd-box-full-col;
+    @extend .#{$--custom-name}-bg-white;
+    border-radius: 0 0 12px 12px;
+    box-shadow: $--shadow-bg-2;
+    position: relative;
+  }
+}
+
+// hover
+.#{$--custom-name} {
+  &-pointer {
+    cursor: pointer;
+    &:hover {
+      color: $--color-primary;
+    }
+  }
+}
+
+// 圆角
+.#{$--custom-name} {
+  &-radius {
+    @for $idx from 2 through 50 {
+      &-#{$idx * 2} {
+        border-radius: #{$idx * 2}px;
+      }
+    }
+  }
+}

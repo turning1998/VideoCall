@@ -1,0 +1,42 @@
+
+
+@mixin font-family($name) {
+  font-family: $name, '微软雅黑', sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana;
+}
+
+@mixin flex-box($row: _, $col: _, $dir: _, $wrap: _) {
+  display: flex;
+  @if $row != _ {
+    justify-content: $row;
+  }
+  @if $col != _ {
+    align-items: $col;
+  }
+  @if $dir != _ {
+    flex-direction: $dir;
+  }
+  @if $wrap != _ {
+    flex-wrap: $wrap;
+  }
+}
+
+@mixin area($x, $y) {
+  overflow-x: $x;
+  overflow-y: $y;
+}
+
+@mixin position($attr, $top: _, $right: _, $bottom: _, $left: _) {
+  position: $attr;
+  @if $top != _ {
+    top: $top;
+  }
+  @if $right != _ {
+    right: $right;
+  }
+  @if $bottom != _ {
+    bottom: $bottom;
+  }
+  @if $left != _ {
+    left: $left;
+  }
+}

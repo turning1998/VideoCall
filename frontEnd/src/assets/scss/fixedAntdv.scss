@@ -1,0 +1,194 @@
+@import "./_vars.scss";
+@import './mixins';
+
+// 公共
+.icon-button.ant-btn > .anticon {
+  @include flex-box(center, center);
+}
+
+// 登录注册
+.sign-tabs {
+  width: 400px;
+  &.sign-up {
+    width: 600px;
+  }
+  .ant-tabs-bar {
+    border-color: #C8C8C8;
+  }
+  .ant-tabs-nav {
+    color: $--color-grey-sub;
+    font-size: 18px;
+    .ant-tabs-tab-active {
+      color: $--color-grey;
+    }
+  }
+  .ant-tabs-ink-bar {
+    height: 4px;
+    background-image: $--gradient-primary;
+  }
+}
+.sign-btn {
+  &.ant-btn {
+    height: 42px;
+    font-size: 18px;
+    background-image: $--gradient-primary;
+    color: white;
+    border-radius: 8px;
+  }
+}
+
+.map-tools-manage {
+  .ant-popover-inner-content, .ant-collapse-content > .ant-collapse-content-box {
+    padding: 0;
+  }
+}
+
+// 用户信息
+.userinfo-dropdown {
+  &.ant-dropdown {
+    min-width: 100px !important;
+  }
+}
+.map-right .ant-form-item-label {
+  display: flex;
+  justify-content: flex-end;
+  line-height: 16px;  //这个数值视具体情况而定
+  label {            //这是关键
+    white-space: normal;
+    text-align: right;
+    color: #666666;
+    font-weight: 400;
+    padding-right: 9px;
+    font-size: 14px;
+    &:after {          
+      content: none !important;      //解决上面的样式label后面会有空格
+    }
+  }
+}
+.ant-collapse-content > .ant-collapse-content-box{
+  padding: 0!important;
+}
+.ant-collapse{
+  width: 100%;
+}
+.ant-collapse-header{
+  font-weight: bold;
+  font-size: 14px;
+ 
+}
+.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header{
+  padding-left: 12px!important;
+}
+.select-file{
+  .ant-table-selection-column{
+  .ant-radio-inner{
+    background-color: #3967FF;
+  }
+}
+}
+.ant-slider-track{
+  background-color: #5262F4 !important;
+}
+.vc-color-wrap{
+  width: 25px!important;
+}
+.ant-input-number-group-addon,.ant-input-number{
+  border: none!important;
+}
+.ant-input-number{
+  background: #F0F0F0 !important;
+}
+// .ant-input{
+//   border: none  !important;
+// }
+.max-error{
+  .ant-form-item-label{
+    width: 130px !important;
+
+  }
+  .ant-form-item-control-input{
+    position: relative;
+  }
+  .ant-input-number-group-wrapper{
+    float: none !important;
+    margin-left: 45px;
+
+  }
+}
+.forceOddLabels{
+  .ant-form-item-label{
+    width: 130px !important;
+
+  }
+  .ant-form-item-control-input-content button{
+    float: left !important;
+    margin-left: 100px;
+
+  }
+
+  
+}
+.maxCharAngleDelta{
+  .ant-form-item-label{
+    width: 170px !important;
+
+  }
+  .ant-input-number{
+    float: none !important;
+    margin-left: 25px;
+  }
+}
+.minimumPadding{
+  .ant-form-item-label{
+    width: 130px !important;
+
+  }
+  .ant-input-number-group-wrapper{
+    float: none !important;
+    margin-left: 45px;
+  }
+
+}
+.setting-template .ant-modal-body{
+  padding: 0!important;
+  position: relative;
+  height: 620px;
+}
+.ant-layout-header{
+  line-height: 65px!important;
+  // height: 65px!important;
+}
+.project-file .ant-select-selector{
+  background: #F7F7F9 !important;
+  border: 1px solid #F6F6F6 !important;
+  border-radius: 6px !important;
+  margin-left: 17px;
+  padding:0px 5px!important;
+  .ant-select-selection-item::after{
+
+  }
+
+}
+.rd-box{
+  height: 50px;
+}
+.map-top .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+  border: none!important;
+
+}
+.ol-zoom-in,.ol-zoom-out{
+  background: #ebe9e9 !important;
+  color: #121212!important;
+  font-size: 18px!important;
+  font-weight: bold!important;
+}
+.vc-colorpicker{
+  left: -100px;
+  position: relative;
+}
+.ant-pagination{
+  position: fixed;
+  z-index: 999;
+  right: 20px;
+
+}
